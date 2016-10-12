@@ -59,6 +59,14 @@
   <strong>Status:</strong>
   <%= @representante.status %>
 </p>
-
+<h3>Zonas atendidas</h3>
+<% @representante.zonas.each do |zona| %>
+  <div>
+    <strong><%= zona.cidade %></strong>
+    <br />
+    <p><%= zona.estado %><p>
+  </div>
+<% end %>
+<%= render 'zonas/form' %>
 <%= link_to 'Edit', edit_representante_path(@representante) %> |
 <%= link_to 'Back', representantes_path %>

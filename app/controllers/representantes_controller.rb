@@ -65,6 +65,7 @@ class RepresentantesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_representante
       @representante = Representante.find(params[:id])
+      @zona = @representante.zonas.build
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
